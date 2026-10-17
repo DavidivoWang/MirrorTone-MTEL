@@ -107,55 +107,19 @@ The fourth line introduces **completion authority**: tool success, a commit, a g
 
 The fifth line introduces **consequence reconciliation**: acknowledgement or source deletion does not repair state that has already propagated. Recovery must trace affected consequences, preserve independently valid state, choose an appropriate revert / compensation / containment path, and verify the resulting state.
 
-## Emerging chain
+## How to read the public research
 
-```text
-Capability
-    ↓
-Authority
-    ↓
-Evidence
-    ↓
-State admission
-    ↓
-Current state
-    ↓
-Correction / supersession
-    ↓
-Dependency invalidation
-    ↓
-Rebind
-    ↓
-Action / decision
-    ↓
-Candidate completion signal
-    ↓
-Target-matched verification
-    ↓
-Completion
-    ↓
-If failure / violation remains:
-    ↓
-Consequence tracing
-    ↓
-Rollback / compensation / containment / repair
-    ↓
-Target-state readback
-    ↓
-Resume only from repaired state
-```
+The five governance primitives recur across the public probes, crosswalks, and benchmark fixtures, but this repository does **not** present them as a single universal runtime sequence.
 
-This chain is a public research map. The first five benchmark fixture semantics are QUALIFIED v0.1; this does not make every chain element a production runtime primitive or certify any provider/model/runtime.
+Individual public materials examine specific relationships among authority, evidence, correction, recovery, and completion. Those relationships should be read at the scope actually supported by the linked public evidence—not as documentation of MirrorTone's private system architecture.
 
 ## Public / private boundary
 
-This repository intentionally publishes the **governance interface and measurement surface**, not the private implementation of MirrorTone.
+This repository publishes the **public research surface** needed to inspect its released claims: governance vocabulary, public probes, crosswalks, benchmark semantics, reference evaluators, and bounded fixtures.
 
-**Public here:** governance vocabulary, public probes, crosswalks, benchmark semantics, reference evaluators, and sandbox fixtures needed to inspect the claims made in this repository.
+Materials and implementation details not explicitly released are outside this public surface. The repository should not be read as documentation of MirrorTone's private implementation, internal research methods, or operational architecture.
 
-**Kept private:** production runtime implementation, internal authority-dispatch logic, private state and memory machinery, internal thresholds and routing rules, private regression corpora, deployment topology, and real working traces that are not explicitly released.
-
-A public benchmark may show **what must be checked** without disclosing **how the private MirrorTone runtime implements those checks**.
+A public benchmark may show **what is being evaluated** without disclosing the private system that may use related ideas.
 
 ## Rights and reuse
 
@@ -165,7 +129,7 @@ Public availability, attribution, and permission to reuse are distinct. See [Rig
 
 The first five MTEL governance benchmark fixtures are **QUALIFIED v0.1** for fixture semantics, evaluator behavior, false-pass regression, and stateful sandbox instantiation. See [`Qualification Decision v0.1`](benchmark/harness/qualification_decision_v0_1.md).
 
-Model replay results remain experimental and configuration-specific. No provider agent, MirrorTone runtime, deployment, or production system is certified by this qualification.
+Model replay results remain experimental and configuration-specific. This qualification applies only to the published fixture scope and does not certify any provider, model, agent, or external system.
 
 This repository is a **public-facing research entry point**, not a declaration that every MirrorTone / MTEL component is production-ready or formally released.
 
