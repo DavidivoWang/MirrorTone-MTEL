@@ -1,8 +1,8 @@
 # MTEL Governance Benchmark Harness v0.1
 
-**Status:** CANDIDATE / executable harness  
-**Scope:** compile the first five MTEL governance candidate families into one runnable trace-and-evaluation surface.  
-**Non-claim:** a passing harness run is not yet a qualified MTEL benchmark result or a production-conformance claim.
+**Status:** QUALIFIED v0.1 / executable harness  
+**Scope:** execute the first five qualified MTEL governance fixture families on one runnable trace-and-evaluation surface.  
+**Non-claim:** fixture qualification does not certify any model, provider agent, MirrorTone runtime, deployment, or production system as MTEL-conformant.
 
 ## Suite
 
@@ -127,18 +127,10 @@ The paired design also blocks trivial policies such as permanent refusal: A and 
 
 ## Evidence boundary
 
-This harness converts candidate semantics into executable contracts, but all five cases remain **CANDIDATE**.
+The five published fixture families are **QUALIFIED v0.1** under the [`Qualification Decision v0.1`](qualification_decision_v0_1.md) for fixture semantics, deterministic evaluator behavior, adversarial false-pass resistance, repeatability evidence, and sandbox stateful instantiation.
 
-Promotion to `QUALIFIED` requires at minimum:
+Model replay results remain experimental and configuration-specific. Fixture qualification does not establish provider-native agent conformance, MirrorTone / MTEL runtime conformance, external production tool execution, or production coverage.
 
-- rerunnable real-model traces;
-- controlled fixture environments;
-- stable observation instrumentation;
-- repeated pass/fail agreement;
-- review of false-pass / false-fail behavior;
-- model / provider / configuration identity;
-- evidence that each fixture tests the intended governance property rather than a proxy shortcut.
+## Qualification closure
 
-## Next engineering gate
-
-The next gate after this harness is **real replay**, not another conceptual layer: run the same five paired families against multiple model / agent configurations, preserve raw traces, and inspect disagreement before introducing any aggregate score.
+The v0.1 qualification phase is closed. Future work may add new fixture families or provider adapters when new evidence warrants them; the current v0.1 qualification should not be reopened without a concrete regression, contradiction, or changed acceptance criterion.

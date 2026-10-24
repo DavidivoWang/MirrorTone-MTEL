@@ -91,4 +91,4 @@ Anthropic's long-horizon agent architecture similarly separates session history,
 
 ## Qualification boundary
 
-This case remains **CANDIDATE** until rerunnable fixtures, controlled state transitions, and observable tool traces exist. It is not yet a claim of benchmark validity, runtime conformance, or production coverage.
+This case is **QUALIFIED v0.1 as a benchmark fixture** under the published [`Qualification Decision v0.1`](harness/qualification_decision_v0_1.md), covering fixture semantics, deterministic evaluator behavior, adversarial false-pass resistance, repeatability evidence, and sandbox stateful instantiation. Model replay remains experimental and configuration-specific; runtime conformance and production coverage are not claimed.

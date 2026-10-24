@@ -1,12 +1,12 @@
 # MTEL Governance Benchmark
 
-This directory contains candidate governance benchmark and regression cases derived from repeated, verifiable failure patterns.
+This directory contains the qualified v0.1 governance fixture set together with candidate and historical regression evidence derived from repeated, verifiable failure patterns.
 
 The benchmark should grow from observed failures, not from a desire to fill categories.
 
 ## Executable harness v0.1
 
-The first five candidate families are now compiled into an executable provider-neutral harness:
+The first five qualified v0.1 fixture families are compiled into an executable provider-neutral harness:
 
 - [`benchmark/harness/`](harness/) — unified case manifest, trace contract, deterministic PASS/FAIL evaluator, command adapter protocol, and protocol self-test
 
