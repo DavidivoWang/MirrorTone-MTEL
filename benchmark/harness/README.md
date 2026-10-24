@@ -1,6 +1,6 @@
 # MTEL Governance Benchmark Harness v0.1
 
-**Status:** QUALIFIED v0.1 / executable harness  
+**Status:** QUALIFIED v0.1 / executable harness *(repository-issued fixture qualification; not third-party certification)*  
 **Scope:** execute the first five qualified MTEL governance fixture families on one runnable trace-and-evaluation surface.  
 **Non-claim:** fixture qualification does not certify any model, provider agent, MirrorTone runtime, deployment, or production system as MTEL-conformant.
 
