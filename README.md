@@ -77,6 +77,7 @@ Not every new AI development belongs here. A signal only enters the public layer
 - [`Public Exit 001 — Capability Is Not Authority`](public-exit/001_capability_is_not_authority.md)
 - [`Crosswalk 005 — Beyond Agent Harnesses × MirrorTone / MTEL`](crosswalks/005_beyond_agent_harnesses_x_mtel.md)
 - [`MTEL-CA-001 — Authority Boundary Pair`](benchmark/MTEL-CA-001_authority_boundary_pair.md) — **QUALIFIED v0.1 benchmark fixture**
+- **One-hop evidence:** [`qualification decision`](benchmark/harness/qualification_decision_v0_1.md) → [`executable harness`](benchmark/harness/) → [Beyond Agent Harnesses](https://arxiv.org/abs/2609.08472)
 
 ### 002 — Retrieval → Current State
 
@@ -85,6 +86,7 @@ Not every new AI development belongs here. A signal only enters the public layer
 - [`Crosswalk 006 — Concord × MirrorTone / MTEL`](crosswalks/006_concord_x_mtel.md)
 - [`Crosswalk 007 — Stale Does Not Mean Unsafe × MirrorTone / MTEL`](crosswalks/007_stale_does_not_mean_unsafe_x_mtel.md)
 - [`MTEL-SE-001 — Fresh-State Admission Pair`](benchmark/MTEL-SE-001_fresh_state_admission_pair.md) — **QUALIFIED v0.1 benchmark fixture**
+- **One-hop evidence:** [`qualification decision`](benchmark/harness/qualification_decision_v0_1.md) → [`executable harness`](benchmark/harness/) → [STALE](https://arxiv.org/abs/2605.06527) · [Concord](https://arxiv.org/abs/2610.05281) · [Guard Precision](https://arxiv.org/abs/2609.29522)
 
 The second line introduces **state admission**: retrieved information can be relevant evidence without automatically becoming current action-bearing state. The newer crosswalks add a precision constraint: source change can invalidate context, but **freshness alone is not a universal safety predicate**; action-bearing state should be judged against the dependency and semantic criterion that matter for the pending action.
 
@@ -93,6 +95,7 @@ The second line introduces **state admission**: retrieved information can be rel
 - [`Public Exit 003 — Correction Is Not Rebind`](public-exit/003_correction_is_not_rebind.md)
 - [`Crosswalk 002 — Supersede × MirrorTone / MTEL`](crosswalks/002_supersede_x_mtel.md)
 - [`MTEL-CR-001 — Dependency Rebind Pair`](benchmark/MTEL-CR-001_dependency_rebind_pair.md) — **QUALIFIED v0.1 benchmark fixture**
+- **One-hop evidence:** [`qualification decision`](benchmark/harness/qualification_decision_v0_1.md) → [`executable harness`](benchmark/harness/) → [Supersede](https://arxiv.org/abs/2606.27472)
 
 The third line introduces **dependency-aware rebind**: once a material correction is admitted, downstream state supported by the superseded premise must lose action authority until it is re-evaluated. Rebind should remain scoped to affected dependencies rather than globally resetting unrelated state.
 
@@ -101,6 +104,7 @@ The third line introduces **dependency-aware rebind**: once a material correctio
 - [`Public Exit 004 — Completion Is Not Self-Declared Success`](public-exit/004_completion_is_not_self_declared_success.md)
 - [`Crosswalk 003 — Traverse × MirrorTone / MTEL`](crosswalks/003_traverse_x_mtel.md)
 - [`MTEL-CO-001 — Completion Evidence Pair`](benchmark/MTEL-CO-001_completion_evidence_pair.md) — **QUALIFIED v0.1 benchmark fixture**
+- **One-hop evidence:** [`qualification decision`](benchmark/harness/qualification_decision_v0_1.md) → [`executable harness`](benchmark/harness/) → [Traverse](https://arxiv.org/abs/2609.17930)
 
 The fourth line introduces **completion authority**: tool success, a commit, a generated artifact, an outcome bit, or the agent's own terminal message are only candidate completion signals. Closure requires task-specific, target-matched evidence.
 
@@ -109,6 +113,7 @@ The fourth line introduces **completion authority**: tool success, a commit, a g
 - [`Public Exit 005 — Rollback Is Not Apology`](public-exit/005_rollback_is_not_apology.md)
 - [`Crosswalk 004 — Dependency-Guided Rollback Repair × MirrorTone / MTEL`](crosswalks/004_dependency_guided_rollback_x_mtel.md)
 - [`MTEL-RB-001 — Consequence Reconciliation Pair`](benchmark/MTEL-RB-001_consequence_reconciliation_pair.md) — **QUALIFIED v0.1 benchmark fixture**
+- **One-hop evidence:** [`qualification decision`](benchmark/harness/qualification_decision_v0_1.md) → [`executable harness`](benchmark/harness/) → [Dependency-Guided Rollback Repair](https://arxiv.org/abs/2608.10502)
 
 The fifth line introduces **consequence reconciliation**: acknowledgement or source deletion does not repair state that has already propagated. Recovery must trace affected consequences, preserve independently valid state, choose an appropriate revert / compensation / containment path, and verify the resulting state.
 
