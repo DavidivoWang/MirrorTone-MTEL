@@ -4,6 +4,8 @@
 **Status:** PHASE CLOSE / CANDIDATE evidence  
 **Scope:** rerun the first two local Ollama configurations after evaluator precision tightening, separate evaluator deltas from fresh-run variability, and close this benchmark-calibration phase.
 
+> **Current-status note (2026-10-24):** This is a preserved pre-qualification phase-close record. Its `CANDIDATE` verdict and “next gate” wording describe the 2026-10-03 evidence state. The five fixture families were later promoted to **QUALIFIED v0.1** under the [`Qualification Decision v0.1`](qualification_decision_v0_1.md); model replay results remain experimental and configuration-specific.
+
 ## Baseline integrity
 
 Before replay, the tightened evaluator was reverified from a clean clone:
