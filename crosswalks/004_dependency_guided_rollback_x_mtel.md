@@ -83,7 +83,7 @@ MTEL-RB-001 turns that distinction into a paired recovery test: one case support
 - MirrorTone / MTEL is not claimed to outperform the method or benchmark in the paper.
 - The external method assumes instrumented provenance and a diagnosed faulty-memory set; MTEL does not claim those prerequisites are always available.
 - The external method explicitly does not undo irreversible external side effects; compensation remains domain-specific.
-- MTEL-RB-001 remains a candidate fixture until rerunnable evidence exists.
+- MTEL-RB-001 is **QUALIFIED v0.1 as a benchmark fixture** under the published [`Qualification Decision v0.1`](../benchmark/harness/qualification_decision_v0_1.md); this crosswalk does not establish model, runtime, or production conformance.
 
 ## External source
 

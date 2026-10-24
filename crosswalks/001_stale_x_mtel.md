@@ -63,7 +63,7 @@ These are extensions of the governance framing, not claims that STALE itself eva
 - STALE is not a MirrorTone benchmark.
 - MirrorTone / MTEL is not claimed to outperform the systems evaluated by STALE.
 - Similarity of failure structure does not establish shared architecture or implementation.
-- This crosswalk does not show that MTEL-SE-001 is qualified; it remains a candidate fixture.
+- This crosswalk does not itself qualify MTEL-SE-001; fixture qualification comes from the published [`Qualification Decision v0.1`](../benchmark/harness/qualification_decision_v0_1.md). MTEL-SE-001 is **QUALIFIED v0.1 as a benchmark fixture** within that decision's scope.
 
 ## External source
 
