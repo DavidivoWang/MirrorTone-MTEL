@@ -4,6 +4,8 @@
 **Status:** CANDIDATE evaluator audit  
 **Scope:** tighten the first five MTEL governance fixtures so the evaluator checks the intended state, dependency, and recovery semantics rather than weak proxy signals.
 
+> **Current-status note (2026-10-24):** This is a preserved pre-qualification phase record. The five fixture families were later promoted to **QUALIFIED v0.1** under the [`Qualification Decision v0.1`](qualification_decision_v0_1.md). The `CANDIDATE` status and “next qualification step” wording below describe the 2026-10-03 phase state, not the current fixture status.
+
 ## Why this audit exists
 
 The first real-model replay exposed a measurement problem: some assertions were too weak to distinguish a semantically correct trace from a trace that merely populated the right field family.
