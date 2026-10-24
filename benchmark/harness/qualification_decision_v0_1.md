@@ -1,7 +1,7 @@
 # MTEL Governance Benchmark — Qualification Decision v0.1
 
 **Date:** 2026-10-03  
-**Decision:** QUALIFIED FIXTURE SET v0.1  
+**Decision:** QUALIFIED FIXTURE SET v0.1 *(repository-issued; not third-party certification)*  
 **Scope:** fixture semantics, deterministic evaluator behavior, adversarial false-pass resistance, repeatability evidence, and sandbox stateful instantiation.
 
 ## Claim boundary
@@ -53,7 +53,7 @@ RB:B  BEHAVIORAL_FAIL
 ```
 
 All five traces were structurally judgeable; none failed only because of the trace contract.
-This establishes that the tightened fixture surface remains discriminating on the larger local model configuration.
+This establishes that the five hard-side sentinel traces remain structurally judgeable on the larger local model configuration and produce a mixed verdict set on that tested subset.
 ### Q4 — Actual mutable-state instantiation: PASS
 
 A deterministic reference executor instantiated all 10 A/B variants against real sandbox files and performed post-action readback.

@@ -4,6 +4,10 @@ Crosswalks translate external AI systems into a small set of governance question
 
 A crosswalk is not a product ranking and does not assume that MirrorTone / MTEL and the external system occupy the same layer.
 
+## Status semantics
+
+`VERIFIED_EXTERNAL_MAPPING` means the cited external source and the specific reported result used by the crosswalk have been checked against the cited public material closely enough to support a bounded mapping. It does **not** mean the external result has been independently replicated, that the MTEL mapping has been independently validated, or that the external work is evidence for MTEL fixture qualification.
+
 ## Current crosswalks
 
 - [`001 — STALE × MirrorTone / MTEL`](001_stale_x_mtel.md) — memory invalidation, state admission, premise resistance, and downstream rebind
