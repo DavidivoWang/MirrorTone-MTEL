@@ -30,6 +30,74 @@ benchmark/harness/
 
 The Markdown files one directory above remain the explanatory source specs. `cases.json` is the executable manifest.
 
+## Reproduce the qualified public fixture surface
+
+The core v0.1 qualification surface is reproducible without a model server or provider account. The four commands below use only the Python standard library.
+
+Prerequisites:
+
+- Git
+- Python 3
+- a disposable checkout is recommended because the stateful reference step creates sandbox files and rewrites its retained JSONL result
+
+From a fresh checkout:
+
+```bash
+git clone https://github.com/DavidivoWang/MirrorTone-MTEL.git
+cd MirrorTone-MTEL
+git rev-parse HEAD
+python --version
+
+python benchmark/harness/mtel_harness.py validate
+python benchmark/harness/mtel_harness.py selftest
+python benchmark/harness/precision_audit.py
+python benchmark/harness/stateful_reference_qualification.py
+```
+
+If your platform exposes Python as `python3`, substitute `python3` for `python`.
+
+Expected terminal anchors:
+
+```text
+validate:
+  cases = 5
+  variants = 10
+  valid = true
+
+selftest:
+  10 fixture variants report PASS
+  OVERALL PASS
+
+precision audit:
+  8 adversarial traces report BLOCKED
+  PRECISION_AUDIT PASS
+
+stateful reference:
+  10 A/B stateful cases report PASS
+  STATEFUL_REFERENCE_QUALIFICATION PASS 10/10
+```
+
+These checks reproduce the public evidence for:
+
+- the five-case / ten-variant executable manifest;
+- deterministic positive-path evaluator behavior through the protocol self-test;
+- the eight retained false-pass regression blocks;
+- all ten A/B fixture variants instantiated against mutable sandbox state with readback.
+
+They do **not** reproduce or establish:
+
+- model replay results;
+- provider-native agent conformance;
+- external production-tool execution;
+- MirrorTone / MTEL runtime conformance;
+- production coverage or a leaderboard result.
+
+The model replays remain separate, configuration-specific experimental evidence. They are not required to reproduce the qualified fixture surface.
+
+### Reproduction side effects
+
+`stateful_reference_qualification.py` creates `benchmark/harness/stateful_reference_sandbox/` and writes `benchmark/harness/runs/stateful_reference_qualification.jsonl`. Use a disposable checkout if you want the simplest clean-room rerun. After the run, `git status --short` can be used to inspect any generated or changed files before deleting the checkout.
+
 ## Agent command protocol
 
 The harness is provider-neutral. It invokes any external model / agent wrapper as a command.
