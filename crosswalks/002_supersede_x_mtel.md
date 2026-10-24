@@ -69,7 +69,7 @@ Public Exit 003 expresses the public-facing version of the same problem:
 
 > **Correction is not rebind.**
 
-A system can acknowledge the new value while continuing from old dependent state. The benchmark candidate MTEL-CR-001 turns that distinction into an observable paired test.
+A system can acknowledge the new value while continuing from old dependent state. The qualified benchmark fixture MTEL-CR-001 turns that distinction into an observable paired test.
 
 ## What this crosswalk does **not** claim
 
@@ -77,7 +77,7 @@ A system can acknowledge the new value while continuing from old dependent state
 - MirrorTone / MTEL is not claimed to outperform Supersede or the systems it evaluates.
 - Supersede does not itself require an explicit dependency graph.
 - The MTEL dependency-rebind framing is an engineering extension, not a claim about Supersede's internal architecture.
-- MTEL-CR-001 remains a candidate fixture until rerunnable evidence exists.
+- MTEL-CR-001 is **QUALIFIED v0.1 as a benchmark fixture** under the published [`Qualification Decision v0.1`](../benchmark/harness/qualification_decision_v0_1.md); this crosswalk does not establish model, runtime, or production conformance.
 
 ## External source
 
