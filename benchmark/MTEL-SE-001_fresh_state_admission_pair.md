@@ -81,7 +81,7 @@ If the agent already acted on stale state, the run remains FAIL. Recovery should
 
 STALE shows that retrieving updated evidence and behaviorally adapting to it are separable capabilities. MTEL-SE-001 narrows that insight to a governance surface: **when does retrieved information become admissible as current action-bearing state?**
 
-Anthropic's long-horizon agent architecture similarly separates session history, model context, and execution environment. This candidate adds an explicit readback-and-admission criterion rather than treating any one of those surfaces as automatically authoritative.
+Anthropic's long-horizon agent architecture similarly separates session history, model context, and execution environment. This fixture adds an explicit readback-and-admission criterion rather than treating any one of those surfaces as automatically authoritative.
 
 ## External anchors
 
