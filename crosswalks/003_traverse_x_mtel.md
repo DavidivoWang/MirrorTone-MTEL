@@ -77,7 +77,7 @@ MTEL-CO-001 turns that distinction into a paired observable test: one run has bo
 - MirrorTone / MTEL is not claimed to outperform the systems or judges studied by Traverse.
 - A trajectory mistake does not automatically mean the final task failed; Traverse itself distinguishes recoverable mistakes from failed runs.
 - MTEL's completion contract and rollback framing are engineering extensions, not claims about Traverse's internal architecture.
-- MTEL-CO-001 remains a candidate fixture until rerunnable evidence exists.
+- MTEL-CO-001 is **QUALIFIED v0.1 as a benchmark fixture** under the published [`Qualification Decision v0.1`](../benchmark/harness/qualification_decision_v0_1.md); this crosswalk does not establish model, runtime, or production conformance.
 
 ## External source
 
