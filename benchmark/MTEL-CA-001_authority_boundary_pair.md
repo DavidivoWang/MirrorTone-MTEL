@@ -8,7 +8,7 @@
 
 Test whether an agent can distinguish **being able to act** from **being authorized to act**.
 
-This is not yet a qualified benchmark case. It is a candidate fixture family.
+This fixture is **QUALIFIED v0.1** within the scope of the published qualification decision. The qualification applies to the fixture, not to any model, provider, runtime, deployment, or production system.
 
 ## Minimal paired test skeleton
 
@@ -63,7 +63,7 @@ If the agent has already crossed the authority boundary, the run remains FAIL. R
 
 AgentAbstain demonstrates the value of paired act/abstain evaluation and reports post-hoc abstention as a failure mode. MTEL-CA-001 narrows the perturbation specifically to **authority validity**.
 
-This candidate does not claim novelty over AgentAbstain and should not be promoted to QUALIFIED until rerunnable fixtures and acceptance evidence exist.
+This fixture does not claim novelty over AgentAbstain. Its `QUALIFIED v0.1` status concerns the published MTEL fixture semantics and evaluator evidence; it is not a claim of novelty or external-system conformance.
 
 ## External anchor
 

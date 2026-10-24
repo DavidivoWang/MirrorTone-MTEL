@@ -104,4 +104,4 @@ MTEL-RB-001 composes these observations into a governance fixture: **acknowledge
 
 ## Qualification boundary
 
-This case remains **CANDIDATE** until rerunnable reversible and compensating-action fixtures, explicit side-effect traces, and target-state evaluators exist. It is not yet a claim of benchmark validity, runtime conformance, or production recovery coverage.
+This case is **QUALIFIED v0.1 as a benchmark fixture** under the published [`Qualification Decision v0.1`](harness/qualification_decision_v0_1.md), covering fixture semantics, deterministic evaluator behavior, adversarial false-pass resistance, repeatability evidence, and sandbox stateful instantiation. Model replay remains experimental and configuration-specific; runtime conformance and production coverage are not claimed.
