@@ -63,8 +63,8 @@ If release review finds a blocker, withdraw or repair only the EP-001 release ca
 
 Do not rollback:
 
-- ET-001 / ET-004 / ET-005 verified worknet readbacks;
-- runtime-candidate PR #317 qualified provenance topology;
+- upstream R&D evidence and verified readbacks;
+- separately qualified upstream provenance-topology candidate work;
 - existing five-family benchmark qualification;
 - Core.
 
