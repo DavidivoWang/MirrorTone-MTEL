@@ -226,7 +226,7 @@ deterministic_pass = all([
 ])
 
 # Compact frozen packet assembled from exact git objects.
-se = git_show(BASE, "benchmark/MTEL-SE-001_state_freshness_pair.md")
+se = git_show(BASE, "benchmark/MTEL-SE-001_fresh_state_admission_pair.md")
 cr = git_show(BASE, "benchmark/MTEL-CR-001_dependency_rebind_pair.md")
 
 packet = f"""TARGET
