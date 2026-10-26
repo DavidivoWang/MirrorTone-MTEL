@@ -65,6 +65,27 @@ def github_json(url: str) -> object:
         return json.loads(resp.read().decode("utf-8"))
 
 
+REVIEW_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "verdict": {"type": "string", "enum": ["PASS", "HOLD", "FAIL"]},
+        "criteria": {
+            "type": "object",
+            "properties": {key: {"type": "boolean"} for key in CRITERIA},
+            "required": CRITERIA,
+            "additionalProperties": False,
+        },
+        "critical_blockers": {"type": "array", "items": {"type": "string"}},
+        "noncritical_findings": {"type": "array", "items": {"type": "string"}},
+        "reasoning_summary": {"type": "string"},
+    },
+    "required": [
+        "verdict", "criteria", "critical_blockers",
+        "noncritical_findings", "reasoning_summary"
+    ],
+    "additionalProperties": False,
+}
+
 def ollama_review(model: str, packet: str) -> dict:
     system = (
         "You are an independent release reviewer. Review only the frozen packet. "
@@ -75,12 +96,20 @@ def ollama_review(model: str, packet: str) -> dict:
     payload = {
         "model": model,
         "stream": False,
-        "format": "json",
+        "format": REVIEW_SCHEMA,
         "messages": [
             {"role": "system", "content": system},
-            {"role": "user", "content": CONTRACT + "\n\n--- FROZEN PACKET ---\n" + packet},
+            {
+                "role": "user",
+                "content": (
+                    "--- FROZEN PACKET ---\n" + packet
+                    + "\n\n--- REVIEW CONTRACT ---\n" + CONTRACT
+                    + "\n\nReturn only the release-review verdict object. "
+                      "Do not summarize or reproduce any reference fixture."
+                ),
+            },
         ],
-        "options": {"temperature": 0, "seed": 42, "num_predict": 900},
+        "options": {"temperature": 0, "seed": 42, "num_predict": 500},
         "keep_alive": "10m",
     }
     req = urllib.request.Request(
@@ -251,11 +280,17 @@ EP001_RELEASE_READINESS
 EP001_REPLAY_RESULT
 {replay_result}
 
-EXISTING_SE001_REFERENCE
-{se[:7000]}
+REFERENCE_ONLY_SE001
+Use only to distinguish fixture semantics from EP-001:
+{se[:1800]}
 
-EXISTING_CR001_REFERENCE
-{cr[:7000]}
+REFERENCE_ONLY_CR001
+Use only to distinguish fixture semantics from EP-001:
+{cr[:1800]}
+
+FINAL_REVIEW_INSTRUCTION
+Evaluate EP-001 against the eight review criteria. The SE/CR excerpts above are reference-only.
+Do not answer with fixture summaries. Return only the required review object.
 """
 
 (Path("independent_review_packet.md")).write_text(packet, encoding="utf-8")
