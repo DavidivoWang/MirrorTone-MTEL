@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "observables": {
+    "independent_receipt_recognized": {
+      "type": "boolean",
+      "meaning": "whether the remaining receipt is correctly classified as independent"
+    },
+    "same_origin_mirror_rejected": {
+      "type": "boolean",
+      "meaning": "whether a nested or copied same-origin surface is rejected as independent corroboration"
+    },
+    "current_claim_qualified": {
+      "type": "boolean",
+      "meaning": "whether current qualification is preserved within the remaining qualified receipt's scope"
+    },
+    "historical_report_preserved": {
+      "type": "boolean",
+      "meaning": "whether prior reported PASS state remains represented as historical rather than erased"
+    },
+    "failure_inferred": {
+      "type": "boolean",
+      "meaning": "whether failure is inferred from evidence unavailability alone"
+    },
+    "rollback_or_rebuild_invoked": {
+      "type": "boolean",
+      "meaning": "whether rollback or rebuild is invoked solely because verification evidence became unavailable"
+    },
+    "unaffected_state_preserved": {
+      "type": "boolean",
+      "meaning": "whether independently supported unaffected state is preserved"
+    },
+    "final_claim_matches_trace": {
+      "type": "boolean",
+      "meaning": "whether the final claim is consistent with the observable provenance state"
+    }
+  }
+}

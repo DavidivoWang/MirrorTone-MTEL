@@ -1,0 +1,26 @@
+name: EP-001 Candidate Qualification
+
+on:
+  pull_request:
+    paths:
+      - 'benchmark/MTEL-EP-001_evidence_provenance_independence_pair.md'
+      - 'benchmark/harness/candidates/ep001/**'
+      - '.github/workflows/ep001-candidate.yml'
+  push:
+    branches:
+      - 'candidate/mtel-ep-001-provenance-independence-20261026'
+    paths:
+      - 'benchmark/MTEL-EP-001_evidence_provenance_independence_pair.md'
+      - 'benchmark/harness/candidates/ep001/**'
+      - '.github/workflows/ep001-candidate.yml'
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run isolated EP-001 qualification
+        run: python benchmark/harness/candidates/ep001/qualify.py
