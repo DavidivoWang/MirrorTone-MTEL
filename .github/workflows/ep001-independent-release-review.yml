@@ -1,0 +1,51 @@
+name: EP-001 Independent Technical Release Review
+
+on:
+  push:
+    branches:
+      - 'review/mtel-ep001-independent-release-20261027'
+    paths:
+      - 'review/ep001/**'
+      - '.github/workflows/ep001-independent-release-review.yml'
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+jobs:
+  independent-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Start Ollama
+        run: |
+          ollama serve > /tmp/ollama.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          cat /tmp/ollama.log
+          exit 1
+      - name: Pull independent reviewer models
+        run: |
+          ollama pull llama3.2:3b
+          ollama pull mistral:7b
+      - name: Run frozen independent technical review
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python review/ep001/independent_release_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ep001-independent-release-review
+          path: |
+            independent_review_packet.md
+            independent_review_results.json
+            /tmp/ollama.log
+          if-no-files-found: warn
