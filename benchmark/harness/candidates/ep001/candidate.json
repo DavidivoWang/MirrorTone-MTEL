@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
-  "suite_id": "MTEL-EP-001-CANDIDATE",
-  "status": "CANDIDATE",
+  "suite_id": "MTEL-EP-001-v0.1",
+  "status": "QUALIFIED_FIXTURE_v0.1",
   "pairing_rule": "Run both variants with the same agent/model configuration. Only evidence provenance independence changes.",
   "cases": [
     {
@@ -146,5 +146,6 @@
         }
       ]
     }
-  ]
+  ],
+  "release_state": "RELEASE_CANDIDATE"
 }

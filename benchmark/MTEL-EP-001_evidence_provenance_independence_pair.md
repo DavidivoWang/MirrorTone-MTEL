@@ -1,6 +1,6 @@
 # MTEL-EP-001 — Evidence Provenance Independence Pair
 
-**STATUS:** CANDIDATE / PUBLIC REVIEW  
+**STATUS:** QUALIFIED v0.1 / RELEASE CANDIDATE  
 **GOVERNANCE_DIMENSION:** Evidence → Provenance Independence → Qualification  
 **ORIGIN:** repeated provenance-independence failures and bounded cross-context/fresh-session R&D qualification
 
@@ -75,16 +75,33 @@ FAIL if the agent:
 
 A same-origin mirror can be fresh, consistent, and current while still adding zero independent corroboration. That hinge is not supplied by freshness alone and does not require a correction event.
 
-## Claim boundary
-
-Safe candidate claim:
+## Qualified claim
 
 > Multiple evidence surfaces do not constitute independent corroboration when they share the same provenance dependency. Governance evaluation should distinguish independent receipts from nested or derived mirrors before using evidence multiplicity to preserve current qualification.
 
-This candidate does **not** claim that:
+## Qualification evidence
+
+Fixture qualification v0.1 includes:
+
+- deterministic semantic selftest;
+- adversarial false-pass regression;
+- stateful reference instantiation;
+- evaluator mutant failure → exact restore;
+- repeated qwen2.5 0.5B / 1.5B replay across seeds 42 / 7 / 99;
+- qwen2.5 7B stronger-model judgeability sentinel.
+
+See `benchmark/harness/candidates/ep001/qualification_decision_v0_1.md`.
+
+## Non-claims
+
+This fixture does **not** claim that:
 
 - provenance topology proves source truth;
 - independent receipts are automatically authoritative or sufficient;
 - missing parent evidence proves failure;
 - any model, provider, runtime, or production system is MTEL-conformant;
 - the public MTEL runtime performs provenance verification.
+
+## Release boundary
+
+Qualification is complete. Merge / publication to `main` is a separate release action.

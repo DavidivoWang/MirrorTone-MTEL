@@ -1,15 +1,14 @@
-# MTEL-EP-001 Candidate Extension
+# MTEL-EP-001 Qualified Fixture Extension
 
-**Status:** PUBLIC-REVIEW CANDIDATE  
-**Scope:** isolated candidate extension; the existing five-family qualified v0.1 harness remains unchanged.
+**Status:** QUALIFIED FIXTURE v0.1 / RELEASE CANDIDATE  
+**Scope:** isolated qualified extension; the existing five-family qualified v0.1 harness remains unchanged.  
+**Path note:** the historical `candidates/ep001/` path is retained for provenance continuity; path name does not define current lifecycle state.
 
-This directory contains a self-contained qualification surface for:
+This directory contains the self-contained qualification and replay surface for:
 
 - `MTEL-EP-001 — Evidence Provenance Independence Pair`
 
-The candidate tests whether multiple visible evidence surfaces are actually independent or share the same provenance parent.
-
-## Reproduce
+## Reproduce semantic qualification
 
 From repository root:
 
@@ -28,10 +27,26 @@ MUTANT_RESTORE PASS
 QUALIFICATION_RESULT PASS
 ```
 
+## Replay evidence
+
+The qualified evidence set also includes repeated Ollama replay:
+
+- qwen2.5:0.5b — A PASS x3 / B BEHAVIORAL_FAIL x3
+- qwen2.5:1.5b — A PASS x3 / B BEHAVIORAL_FAIL x3
+- qwen2.5:7b sentinel — A BEHAVIORAL_FAIL / B PASS
+
+The smaller-model cells are stable across seeds 42, 7, and 99. The 7B traces are both structurally judgeable.
+
+These are configuration-specific behavioral results, not a model ranking.
+
 ## Boundary
 
-This is a candidate extension, not an amendment to the closed five-family v0.1 qualification decision.
+This qualified fixture is an extension adjacent to, not a rewrite of, the closed five-family v0.1 qualification.
 
-A PASS here establishes only that the candidate fixture semantics and deterministic checks are internally consistent and resist the retained false-pass mutations. It does not establish repeated provider/model replay, third-party certification, runtime conformance, or production coverage.
+It does not certify provider-native conformance, runtime conformance, production coverage, or third-party certification.
 
 The current public `mtel-public-safe` runtime remains out of scope. It consumes caller-supplied evidence admission and does not independently adjudicate evidence adequacy.
+
+## Release state
+
+Fixture qualification is complete. Public merge / release remains separate and is not implied by this README.

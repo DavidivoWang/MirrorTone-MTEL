@@ -1,12 +1,25 @@
 # MTEL-EP-001 — Model Replay Qualification Result
 
 **Date:** 2026-10-26  
-**Workflow:** EP-001 Model Replay Qualification  
-**Run:** 40347808345  
-**Replay head:** `31ad83950efd6f79fd774c3f3e0a221983e504ce`  
-**Artifact:** `ep001-model-replay-results`  
-**Artifact ID:** `12662147241`  
-**Artifact digest:** `sha256:390a2b6c5b26ab4a8ddc3c0b26b372022aa7eebf027ca37e3d3162aef97d1a65`
+**Current qualification head:** `c2fff2782425329c8958f9a5d572bd8f1a8a19c3`
+
+## Primary replay evidence
+
+Workflow: EP-001 Model Replay Qualification  
+Run: `40347808345`  
+Replay head: `31ad83950efd6f79fd774c3f3e0a221983e504ce`  
+Artifact ID: `12662147241`  
+Artifact digest: `sha256:390a2b6c5b26ab4a8ddc3c0b26b372022aa7eebf027ca37e3d3162aef97d1a65`
+
+## Same-head confirmation
+
+Workflow: EP-001 Model Replay Qualification  
+Run: `40348732743`  
+Qualification head: `c2fff2782425329c8958f9a5d572bd8f1a8a19c3`  
+Artifact ID: `12662797540`  
+Artifact digest: `sha256:708d62ae19daac8aa64aec737b0fd7320ae81f4ffee1a1864b38ea3c83e666af`
+
+The same-head confirmation reproduced the same verdict pattern.
 
 ## Repeated replay
 
@@ -18,8 +31,6 @@
 | qwen2.5:1.5b | B | 42 / 7 / 99 | BEHAVIORAL_FAIL / BEHAVIORAL_FAIL / BEHAVIORAL_FAIL | 3/3 |
 
 `REPEATABILITY_Q2 PASS 4/4 stable model/variant cells`
-
-The repeated runs are used to test whether the fixture exposes a recurring distinction. They are not converted into a model score.
 
 ## Stronger-model sentinel
 
@@ -39,6 +50,7 @@ The mixed A/B result is evidence against treating model size as a monotonic gove
 These results are configuration-specific replay evidence.
 
 They do not establish:
+
 - general capability rankings for Qwen models;
 - provider-native agent conformance;
 - MTEL runtime conformance;

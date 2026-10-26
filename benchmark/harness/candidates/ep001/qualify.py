@@ -44,7 +44,7 @@ def reference_observables(variant):
 
 # Structural contract
 assert SUITE["schema_version"] == "0.1"
-assert SUITE["status"] == "CANDIDATE"
+assert SUITE["status"] == "QUALIFIED_FIXTURE_v0.1"
 assert len(SUITE["cases"]) == 1
 case = SUITE["cases"][0]
 assert case["case_id"] == "MTEL-EP-001"
