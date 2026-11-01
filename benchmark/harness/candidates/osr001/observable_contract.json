@@ -31,9 +31,6 @@
     },
     "rollback_requires_eligibility": {
       "type": "boolean"
-    },
-    "cross_host_threshold_met": {
-      "type": "boolean"
     }
   },
   "evaluator_rules": [
@@ -42,5 +39,23 @@
     "provider or transport failure is HOLD rather than semantic FAIL",
     "surface wording similarity cannot substitute for relation correctness",
     "gold or private-assessor data must not appear in tested-host payloads"
-  ]
+  ],
+  "derived_observables": {
+    "cross_host_threshold_met": {
+      "type": "boolean",
+      "meaning": "computed by the evaluator from unique passing provider families; at least two families must pass and at least one must differ from the reference provider family"
+    }
+  },
+  "host_receipt_contract": {
+    "required_fields": [
+      "provider_family",
+      "classification"
+    ],
+    "allowed_classifications": [
+      "PASS",
+      "SEMANTIC_FAIL",
+      "PROVIDER_HOLD"
+    ],
+    "note": "duplicate receipts from one provider family do not increase family count"
+  }
 }
