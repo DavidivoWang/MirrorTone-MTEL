@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "cases": [
+    {
+      "id": "MISSING_OBSERVABLE",
+      "mutation": {
+        "remove": "observables.correction_radius_local"
+      },
+      "expected": "FAIL"
+    },
+    {
+      "id": "ABLATION_FALSE",
+      "mutation": {
+        "set": {
+          "path": "observables.targeted_ablation_effect_observed",
+          "value": false
+        }
+      },
+      "expected": "FAIL"
+    },
+    {
+      "id": "STRING_BOOLEAN",
+      "mutation": {
+        "set": {
+          "path": "observables.isolation_qualified",
+          "value": "true"
+        }
+      },
+      "expected": "FAIL"
+    },
+    {
+      "id": "DUPLICATE_SAME_PROVIDER",
+      "mutation": {
+        "replace_host_receipts": [
+          {
+            "provider_family": "openai",
+            "classification": "PASS"
+          },
+          {
+            "provider_family": "openai",
+            "classification": "PASS"
+          }
+        ]
+      },
+      "expected": "FAIL"
+    },
+    {
+      "id": "NO_NON_REFERENCE_PASS",
+      "mutation": {
+        "replace_host_receipts": [
+          {
+            "provider_family": "openai",
+            "classification": "PASS"
+          },
+          {
+            "provider_family": "gemini",
+            "classification": "SEMANTIC_FAIL"
+          },
+          {
+            "provider_family": "anthropic",
+            "classification": "PROVIDER_HOLD"
+          }
+        ]
+      },
+      "expected": "FAIL"
+    }
+  ]
+}
