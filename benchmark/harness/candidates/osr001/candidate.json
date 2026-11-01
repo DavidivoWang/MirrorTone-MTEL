@@ -23,14 +23,14 @@
     "correction_radius_local",
     "historical_current_separated",
     "unknown_failure_separated",
-    "rollback_requires_eligibility",
-    "cross_host_threshold_met"
+    "rollback_requires_eligibility"
   ],
   "acceptance": {
     "all_required_observables_true": true,
     "cross_host_minimum_provider_families": 2,
     "require_non_reference_provider_family": true,
-    "provider_transport_failure_is_hold": true
+    "provider_transport_failure_is_hold": true,
+    "reference_provider_family": "openai"
   },
   "nonclaims": [
     "universal cross-host invariance",
@@ -41,5 +41,12 @@
     "general provider or model conformance",
     "production runtime conformance"
   ],
-  "release_state": "CANDIDATE_NOT_RELEASED"
+  "release_state": "CANDIDATE_NOT_RELEASED",
+  "required_trace_fields": [
+    "observables",
+    "host_receipts"
+  ],
+  "derived_observables": [
+    "cross_host_threshold_met"
+  ]
 }
