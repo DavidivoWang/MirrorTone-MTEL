@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTEL-OSR-001 candidate trace",
+  "type": "object",
+  "required": [
+    "observables",
+    "host_receipts"
+  ],
+  "properties": {
+    "observables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isolation_qualified",
+        "target_relation_reconstructed",
+        "targeted_ablation_effect_observed",
+        "unrelated_relations_preserved",
+        "transformed_relation_regenerated",
+        "fresh_readback_applied",
+        "correction_radius_local",
+        "historical_current_separated",
+        "unknown_failure_separated",
+        "rollback_requires_eligibility"
+      ],
+      "properties": {
+        "isolation_qualified": {
+          "type": "boolean"
+        },
+        "target_relation_reconstructed": {
+          "type": "boolean"
+        },
+        "targeted_ablation_effect_observed": {
+          "type": "boolean"
+        },
+        "unrelated_relations_preserved": {
+          "type": "boolean"
+        },
+        "transformed_relation_regenerated": {
+          "type": "boolean"
+        },
+        "fresh_readback_applied": {
+          "type": "boolean"
+        },
+        "correction_radius_local": {
+          "type": "boolean"
+        },
+        "historical_current_separated": {
+          "type": "boolean"
+        },
+        "unknown_failure_separated": {
+          "type": "boolean"
+        },
+        "rollback_requires_eligibility": {
+          "type": "boolean"
+        }
+      }
+    },
+    "host_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "provider_family",
+          "classification"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "provider_family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "enum": [
+              "PASS",
+              "SEMANTIC_FAIL",
+              "PROVIDER_HOLD"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
