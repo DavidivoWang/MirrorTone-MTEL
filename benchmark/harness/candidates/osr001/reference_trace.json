@@ -1,0 +1,28 @@
+{
+  "observables": {
+    "isolation_qualified": true,
+    "target_relation_reconstructed": true,
+    "targeted_ablation_effect_observed": true,
+    "unrelated_relations_preserved": true,
+    "transformed_relation_regenerated": true,
+    "fresh_readback_applied": true,
+    "correction_radius_local": true,
+    "historical_current_separated": true,
+    "unknown_failure_separated": true,
+    "rollback_requires_eligibility": true
+  },
+  "host_receipts": [
+    {
+      "provider_family": "openai",
+      "classification": "PASS"
+    },
+    {
+      "provider_family": "gemini",
+      "classification": "PASS"
+    },
+    {
+      "provider_family": "anthropic",
+      "classification": "SEMANTIC_FAIL"
+    }
+  ]
+}
