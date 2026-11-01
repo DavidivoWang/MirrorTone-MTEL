@@ -1,0 +1,28 @@
+name: OSR-001 Candidate Qualification
+
+on:
+  pull_request:
+    paths:
+      - 'benchmark/MTEL-OSR-001_observable_state_reconstruction_protocol.md'
+      - 'benchmark/harness/candidates/osr001/**'
+      - '.github/workflows/osr001-candidate.yml'
+  push:
+    branches:
+      - 'candidate/mtel-osr-001-observable-state-reconstruction-20261101'
+    paths:
+      - 'benchmark/MTEL-OSR-001_observable_state_reconstruction_protocol.md'
+      - 'benchmark/harness/candidates/osr001/**'
+      - '.github/workflows/osr001-candidate.yml'
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Compile qualifier
+        run: python -m py_compile benchmark/harness/candidates/osr001/qualify.py
+      - name: Run OSR-001 candidate qualification
+        run: python benchmark/harness/candidates/osr001/qualify.py
