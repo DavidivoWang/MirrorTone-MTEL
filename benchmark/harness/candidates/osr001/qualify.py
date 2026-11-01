@@ -53,8 +53,7 @@ def hygiene():
     paths=[
       REPO/"benchmark/MTEL-OSR-001_observable_state_reconstruction_protocol.md",
       ROOT/"README.md", ROOT/"candidate.json", ROOT/"observable_contract.json",
-      ROOT/"trace.schema.json", ROOT/"reference_trace.json", ROOT/"false_pass_mutants.json",
-      ROOT/"qualify.py"
+      ROOT/"trace.schema.json", ROOT/"reference_trace.json", ROOT/"false_pass_mutants.json"
     ]
     text="\n".join(p.read_text(encoding="utf-8") for p in paths)
     banned=["ET007","ET008","ET009","ET010","ET011","ET011R","candidate/evolution",
