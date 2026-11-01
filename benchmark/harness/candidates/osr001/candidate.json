@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "suite_id": "MTEL-OSR-001-v0.1-candidate",
+  "status": "CANDIDATE",
+  "title": "Observable-State Reconstruction Protocol",
+  "class": "META_BENCHMARK_PROTOCOL",
+  "source_spec": "../../../MTEL-OSR-001_observable_state_reconstruction_protocol.md",
+  "required_phases": [
+    "isolation",
+    "bounded_state_sufficiency",
+    "causal_dependence",
+    "relational_regeneration",
+    "reality_feedback_correction",
+    "cross_host_survivability"
+  ],
+  "required_observables": [
+    "isolation_qualified",
+    "target_relation_reconstructed",
+    "targeted_ablation_effect_observed",
+    "unrelated_relations_preserved",
+    "transformed_relation_regenerated",
+    "fresh_readback_applied",
+    "correction_radius_local",
+    "historical_current_separated",
+    "unknown_failure_separated",
+    "rollback_requires_eligibility",
+    "cross_host_threshold_met"
+  ],
+  "acceptance": {
+    "all_required_observables_true": true,
+    "cross_host_minimum_provider_families": 2,
+    "require_non_reference_provider_family": true,
+    "provider_transport_failure_is_hold": true
+  },
+  "nonclaims": [
+    "universal cross-host invariance",
+    "identity continuity",
+    "hidden chain-of-thought continuity or reconstruction",
+    "model-weight evolution",
+    "autonomous self-modification",
+    "general provider or model conformance",
+    "production runtime conformance"
+  ],
+  "release_state": "CANDIDATE_NOT_RELEASED"
+}
