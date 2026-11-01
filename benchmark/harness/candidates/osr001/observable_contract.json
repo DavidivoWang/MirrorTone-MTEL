@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "suite_id": "MTEL-OSR-001-v0.1-candidate",
+  "observables": {
+    "isolation_qualified": {
+      "type": "boolean"
+    },
+    "target_relation_reconstructed": {
+      "type": "boolean"
+    },
+    "targeted_ablation_effect_observed": {
+      "type": "boolean"
+    },
+    "unrelated_relations_preserved": {
+      "type": "boolean"
+    },
+    "transformed_relation_regenerated": {
+      "type": "boolean"
+    },
+    "fresh_readback_applied": {
+      "type": "boolean"
+    },
+    "correction_radius_local": {
+      "type": "boolean"
+    },
+    "historical_current_separated": {
+      "type": "boolean"
+    },
+    "unknown_failure_separated": {
+      "type": "boolean"
+    },
+    "rollback_requires_eligibility": {
+      "type": "boolean"
+    },
+    "cross_host_threshold_met": {
+      "type": "boolean"
+    }
+  },
+  "evaluator_rules": [
+    "all required observables must be present and boolean",
+    "all required observables must be true for protocol PASS",
+    "provider or transport failure is HOLD rather than semantic FAIL",
+    "surface wording similarity cannot substitute for relation correctness",
+    "gold or private-assessor data must not appear in tested-host payloads"
+  ]
+}
